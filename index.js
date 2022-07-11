@@ -1,8 +1,12 @@
 import fetch from "node-fetch";
 
+let today = new Date();
+let date = today.getFullYear() + "-" + today.getMonth() + "-" + today.getDate();
+
 const options = {
   method: "PATCH",
   headers: {
+    Accept: "application/json",
     "Notion-Version": "2022-06-28",
     Authorization: "Bearer secret_nBE9MNaNo7sZQFILqGFy4XhA2ycy4MVsMzUBMl5qMA0",
     "Content-Type": "application/json",
@@ -14,7 +18,7 @@ const options = {
           rich_text: [
             {
               text: {
-                content: "Title Goes Here",
+                content: date,
               },
             },
           ],
@@ -25,8 +29,7 @@ const options = {
           rich_text: [
             {
               text: {
-                content:
-                  "Lacinato kale is a variety of kale with a long tradition in Italian cuisine, especially that of Tuscany. It is also known as Tuscan kale, Italian kale, dinosaur kale, kale, flat back kale, palm tree kale, or black Tuscan palm.",
+                content: "Enter description here",
               },
             },
           ],
