@@ -1,4 +1,6 @@
 import fetch from "node-fetch";
+import dotenv from "dotenv";
+dotenv.config();
 
 let today = new Date();
 let date = today.getFullYear() + "-" + today.getMonth() + "-" + today.getDate();
@@ -8,7 +10,7 @@ const options = {
   headers: {
     Accept: "application/json",
     "Notion-Version": "2022-06-28",
-    Authorization: "Bearer secret_nBE9MNaNo7sZQFILqGFy4XhA2ycy4MVsMzUBMl5qMA0",
+    Authorization: `Bearer ${process.env.NOTION_API_KEY}`,
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
