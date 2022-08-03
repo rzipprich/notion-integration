@@ -41,6 +41,5 @@ postRequest.body = JSON.stringify({
   ],
 });
 
-postRequest.load();
-
-Script.complete();
+let responseData = await postRequest.loadString();
+return String(responseData);
